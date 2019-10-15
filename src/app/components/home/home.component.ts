@@ -10,13 +10,16 @@ import { StarwarsService } from 'src/app/services/starwars.service';
 export class HomeComponent implements OnInit {
 
   films: any;
+  isLoaded : boolean;
   
   constructor(private starsw: StarwarsService) { }
-
+  
   ngOnInit() {
+    this.isLoaded=false;
     this.starsw.getFilms().subscribe((res: any) => {
       this.films = res.results;
       console.log('films', this.films);
+    this.isLoaded=true;
     });
   }
 

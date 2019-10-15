@@ -1,87 +1,24 @@
-<section>
-    <div id="carousel">
+<div *ngIf="!isLoaded" class="loading">
+    <i class="fa fa-spinner fa-spin fa-3x"></i>
+</div>
+<div *ngIf="isLoaded" class="contain">
+  <div class="row">
+    <div class="row__inner">
 
-        <div class="hideLeft">
-            <ul>
-                <li><b>Título</b></li>
-                <li><img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
-                        alt="..." max-width="350px;" max-heigth="400px;" /></li>
-                <li><b>Subtítulo</b></li>
-                <li><b>Txt1</b></li>
-                <li><b>Txt2</b></li>
-            </ul>
+      <div *ngFor="let item of films" class="tile">
+        <div class="tile__media">
+          <img class="tile__img" src="../../../assets/{{item.episode_id}}.jpg" alt=""  />
         </div>
-
-        <div class="prevLeftSecond">
-            <ul>
-                <li><b>Título</b></li>
-                <li><img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
-                        alt="..." max-width="350px;" max-heigth="400px;" /></li>
-                <li><b>Subtítulo</b></li>
-                <li><b>Txt1</b></li>
-                <li><b>Txt2</b></li>
-            </ul>
+        <div class="tile__details">
+          <div class="tile__title">
+            {{item.title}} - Episodio: {{item.episode_id}}
+          </div>
+          <div class="tile__subtitle">
+              Lanzamiento: {{item.release_date}} - Director: {{item.director}}
+            </div>
         </div>
-
-        <div class="prev">
-            <ul>
-                <li><b>Título</b></li>
-                <li><img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
-                        alt="..." max-width="350px;" max-heigth="400px;" /></li>
-                <li><b>Subtítulo</b></li>
-                <li><b>Txt1</b></li>
-                <li><b>Txt2</b></li>
-            </ul>
-        </div>
-
-        <div class="selected">
-            <ul>
-                <li><b>Título</b></li>
-                <li><img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
-                        alt="..." max-width="350px;" max-heigth="400px;" /></li>
-                <li><b>Subtítulo</b></li>
-                <li><b>Txt1</b></li>
-                <li><b>Txt2</b></li>
-            </ul>
-        </div>
-
-        <div class="next">
-            <ul>
-                <li><b>Título</b></li>
-                <li><img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
-                        alt="..." max-width="350px;" max-heigth="400px;" /></li>
-                <li><b>Subtítulo</b></li>
-                <li><b>Txt1</b></li>
-                <li><b>Txt2</b></li>
-            </ul>
-        </div>
-
-        <div class="nextRightSecond">
-            <ul>
-                <li><b>Título</b></li>
-                <li><img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
-                        alt="..." max-width="350px;" max-heigth="400px;" /></li>
-                <li><b>Subtítulo</b></li>
-                <li><b>Txt1</b></li>
-                <li><b>Txt2</b></li>
-            </ul>
-        </div>
-
-        <div class="hideRight">
-            <ul>
-                <li><b>Título</b></li>
-                <li><img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
-                        alt="..." max-width="350px;" max-heigth="400px;" /></li>
-                <li><b>Subtítulo</b></li>
-                <li><b>Txt1</b></li>
-                <li><b>Txt2</b></li>
-            </ul>
-        </div>
-
+      </div>
     </div>
+  </div>
 
-    <div class="buttons">
-        <button id="prev">Prev</button>
-        <button id="next">Next</button>
-    </div>
-</section>
+</div>
